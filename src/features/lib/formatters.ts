@@ -1,6 +1,7 @@
 import { Country, OfferMechanic } from '../types';
 
 export function formatCurrency(amount: number, country: Country = 'Colombia'): string {
+  amount = Number.isFinite(Number(amount)) ? Number(amount) : 0;
   if (country === 'Colombia') {
     if (Math.abs(amount) >= 1_000_000_000) {
       return `$${(amount / 1_000_000_000).toFixed(2)}B COP`;
@@ -21,13 +22,15 @@ export function formatCurrency(amount: number, country: Country = 'Colombia'): s
 }
 
 export function formatNumber(val: number): string {
+  val = Number.isFinite(Number(val)) ? Number(val) : 0;
   if (Math.abs(val) >= 1_000_000) return `${(val / 1_000_000).toFixed(1)}M`;
   if (Math.abs(val) >= 1_000) return `${(val / 1_000).toFixed(1)}K`;
   return val.toLocaleString();
 }
 
 export function formatPercent(val: number): string {
-  return `${(val).toFixed(1)}%`;
+  const safe = Number.isFinite(Number(val)) ? Number(val) : 0;
+  return `${safe.toFixed(1)}%`;
 }
 
 /**
@@ -35,6 +38,7 @@ export function formatPercent(val: number): string {
  * No % for coupons, multibuy, or bundles!
  */
 export function formatDiscountOffer(mechanic: OfferMechanic, value: number, country: Country = 'Colombia'): string {
+  value = Number.isFinite(Number(value)) ? Number(value) : 0;
   switch (mechanic) {
     case 'coupon':
       return country === 'Colombia' ? `-$${value * 1000} COP Coupon` : `-$${value} Voucher`;
