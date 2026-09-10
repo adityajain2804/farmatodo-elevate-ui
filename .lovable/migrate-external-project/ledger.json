@@ -1,0 +1,15 @@
+{
+  "source": "frontend.zip",
+  "capabilities": [
+    {"capability":"frontend code and five workspace views","source":"archive","outcome":"migrate to TanStack Start while preserving behavior","status":"inspected","next_action":"implement selected design"},
+    {"capability":"API contracts and hooks","source":"/api/v1 endpoints in archive","outcome":"preserve","status":"inspected","next_action":"port without endpoint changes"},
+    {"capability":"schema and records","source":"none detected","outcome":"not applicable","status":"verified","next_action":"none"},
+    {"capability":"authentication and authorization","source":"none detected","outcome":"not applicable","status":"verified","next_action":"none"},
+    {"capability":"uploaded file bytes","source":"screenshots are visual references only","outcome":"do not embed","status":"verified","next_action":"none"},
+    {"capability":"external providers and secrets","source":"none detected","outcome":"not applicable","status":"verified","next_action":"none"},
+    {"capability":"public endpoints, callbacks, webhooks, schedules","source":"none detected","outcome":"not applicable","status":"verified","next_action":"none"},
+    {"capability":"standalone fallback data","source":"archive inline defaults","outcome":"strengthen across all views","status":"inspected","next_action":"implement finite-value guards and complete mocks"},
+    {"capability":"responsive and interaction verification","source":"requested desktop, tablet, mobile behavior","outcome":"verify","status":"pending","next_action":"run browser checks after implementation"},
+    {"capability":"cutover","source":"not published","outcome":"preview only","status":"pending","next_action":"user may publish after approval"}
+  ]
+}
